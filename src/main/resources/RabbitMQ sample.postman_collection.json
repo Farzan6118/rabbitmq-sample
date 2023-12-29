@@ -1,0 +1,76 @@
+{
+  "info": {
+    "_postman_id": "0ae9b9f2-d73b-4d7c-827a-410036c5c275",
+    "name": "RabbitMQ sample",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "15814228"
+  },
+  "item": [
+    {
+      "name": "rabbit sendWithQueue",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\": \"fsdfsd\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8056/api/v1/send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8056",
+          "path": [
+            "api",
+            "v1",
+            "send"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "rabbit sendWithTopic",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"message\": \"fsdfsd\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8056/api/v1/send",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8056",
+          "path": [
+            "api",
+            "v1",
+            "send"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
