@@ -16,7 +16,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"message\": \"fsdfsd\"\r\n}",
+          "raw": "{\r\n    \"message\": \"Queue\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -24,7 +24,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8056/api/v1/send",
+          "raw": "http://localhost:8056/api/v1/sendWithQueue",
           "protocol": "http",
           "host": [
             "localhost"
@@ -33,7 +33,7 @@
           "path": [
             "api",
             "v1",
-            "send"
+            "sendWithQueue"
           ]
         }
       },
@@ -49,7 +49,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"message\": \"fsdfsd\"\r\n}",
+          "raw": "{\r\n    \"message\": \"Topic\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -57,7 +57,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8056/api/v1/send",
+          "raw": "http://localhost:8056/api/v1/sendWithTopic",
           "protocol": "http",
           "host": [
             "localhost"
@@ -66,7 +66,7 @@
           "path": [
             "api",
             "v1",
-            "send"
+            "sendWithTopic"
           ]
         }
       },

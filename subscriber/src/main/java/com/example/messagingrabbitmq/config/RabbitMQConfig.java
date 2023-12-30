@@ -11,17 +11,17 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class RabbitMQConfig {
     private final String queueName;
-    private final String topicExchangeName;
+    private final String topicExchange;
     private final String routingKey;
 
     public RabbitMQConfig(
             @Value("${rabbitmq.queueName}") String queueName,
-            @Value("${rabbitmq.exchangeName}") String topicExchangeName,
+            @Value("${rabbitmq.exchangeName}") String topicExchange,
             @Value("${rabbitmq.routingKey}") String routingKey
     ) {
         this.queueName = queueName;
         this.routingKey = routingKey;
-        this.topicExchangeName = topicExchangeName;
+        this.topicExchange = topicExchange;
     }
 
     @Bean
@@ -31,11 +31,15 @@ public class RabbitMQConfig {
 
     @Bean
     public TopicExchange topicExchange() {
-        return new TopicExchange(topicExchangeName);
+        return new TopicExchange(topicExchange);
     }
 
     @Bean
     public Binding binding() {
-        return BindingBuilder.bind(queue()).to(topicExchange()).with(routingKey);
+        return BindingBuilder
+                .bind(queue())
+                .to(topicExchange())
+                .with(routingKey);
     }
+
 }
