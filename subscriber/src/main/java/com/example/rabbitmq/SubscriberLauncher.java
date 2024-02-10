@@ -1,13 +1,13 @@
-package com.example.messagingrabbitmq;
+package com.example.rabbitmq;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class PublisherApplication {
+public class SubscriberLauncher {
 
     public static void main(String[] args) {
-        SpringApplication.run(PublisherApplication.class, args);
+        SpringApplication.run(SubscriberLauncher.class, args);
     }
 
 }

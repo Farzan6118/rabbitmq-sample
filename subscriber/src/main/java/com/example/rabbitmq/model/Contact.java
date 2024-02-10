@@ -1,7 +1,6 @@
-package com.example.messagingrabbitmq.model;
+package com.example.rabbitmq.model;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 public class Contact implements Serializable {
     private String firstName;
@@ -24,19 +23,6 @@ public class Contact implements Serializable {
                 ", lastName='" + lastName + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Contact contact = (Contact) o;
-        return Objects.equals(firstName, contact.firstName) && Objects.equals(lastName, contact.lastName) && Objects.equals(phoneNumber, contact.phoneNumber);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(firstName, lastName, phoneNumber);
     }
 
     public String getFirstName() {

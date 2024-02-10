@@ -1,4 +1,4 @@
-package com.example.messagingrabbitmq.model;
+package com.example.rabbitmq.model;
 
 import java.io.Serializable;
 import java.util.Objects;
@@ -19,11 +19,12 @@ public class Contact implements Serializable {
 
     @Override
     public String toString() {
-        return "Contact{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+        final StringBuilder sb = new StringBuilder("Contact{");
+        sb.append("firstName='").append(firstName).append('\'');
+        sb.append(", lastName='").append(lastName).append('\'');
+        sb.append(", phoneNumber='").append(phoneNumber).append('\'');
+        sb.append('}');
+        return sb.toString();
     }
 
     @Override
