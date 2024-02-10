@@ -19,8 +19,8 @@ public class TopicPublisher {
             , "lazy.pink.rabbit"
             , "quick.brown.fox"
     };
-    AtomicInteger index = new AtomicInteger(0);
     private final RabbitTemplate rabbitTemplate;
+    AtomicInteger index = new AtomicInteger(0);
     @Value("${spring.topic.exchange.name}")
     private String topic;
 

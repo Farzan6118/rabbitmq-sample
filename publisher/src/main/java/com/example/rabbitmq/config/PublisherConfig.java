@@ -18,6 +18,7 @@ public class PublisherConfig {
 
     @Value("${spring.pubsub.fanout.name}")
     private String fanout;
+
     @Bean
     public FanoutExchange fanout() {
         return new FanoutExchange(fanout);
