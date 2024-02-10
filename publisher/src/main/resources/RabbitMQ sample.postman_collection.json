@@ -1,10 +1,9 @@
 {
   "info": {
-    "_postman_id": "91b0c34d-71df-41e5-af72-c883ac75020a",
+    "_postman_id": "0ae9b9f2-d73b-4d7c-827a-410036c5c275",
     "name": "RabbitMQ sample",
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-    "_exporter_id": "1165624",
-    "_collection_link": "https://universal-meteor-759448.postman.co/workspace/Samimgroup~15659aab-1114-4bad-bec9-fa16da56abed/collection/1165624-91b0c34d-71df-41e5-af72-c883ac75020a?action=share&source=collection_link&creator=1165624"
+    "_exporter_id": "15814228"
   },
   "item": [
     {
@@ -17,7 +16,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"message\": \"fsdfsd\"\r\n}",
+          "raw": "{\r\n    \"message\": \"Queue\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -25,7 +24,7 @@
           }
         },
         "url": {
-          "raw": "http://localhost:8056/api/v1/send",
+          "raw": "http://localhost:8056/api/v1/sendWithQueue",
           "protocol": "http",
           "host": [
             "localhost"
@@ -34,7 +33,7 @@
           "path": [
             "api",
             "v1",
-            "send"
+            "sendWithQueue"
           ]
         }
       },
@@ -50,7 +49,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"firstName\": \"alex\",\r\n    \"lastName\": \"hamidi\",\r\n    \"phoneNumber\": \"88888\"\r\n}",
+          "raw": "{\r\n    \"message\": \"Topic\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
