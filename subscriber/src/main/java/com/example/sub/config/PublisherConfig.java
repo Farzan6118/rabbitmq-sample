@@ -1,21 +1,17 @@
-package com.example.rabbitmq.config;
+package com.example.sub.config;
 
 import org.springframework.amqp.core.*;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
 @Configuration
-@Profile("pub-sub")
+@Profile("pub_sub")
 public class PublisherConfig {
-
-    @Value("${spring.pubsub.fanout.name}")
-    private String fanout;
 
     @Bean
     public FanoutExchange fanout() {
-        return new FanoutExchange(fanout);
+        return new FanoutExchange("fanout");
     }
 
     @Bean

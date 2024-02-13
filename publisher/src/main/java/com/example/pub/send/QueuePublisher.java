@@ -1,16 +1,18 @@
-package com.example.rabbitmq.publisher;
+package com.example.pub.send;
 
-import com.example.rabbitmq.model.Contact;
+import com.example.pub.model.Contact;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 @Component
 @Profile("queue")
 public class QueuePublisher {
-    @Autowired
-    private RabbitTemplate rabbitTemplate;
+    private final RabbitTemplate rabbitTemplate;
+
+    public QueuePublisher(RabbitTemplate rabbitTemplate) {
+        this.rabbitTemplate = rabbitTemplate;
+    }
 
     @Profile("queue")
     public void sendMessageInQueue(Contact message, String queueName) {

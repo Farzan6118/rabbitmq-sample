@@ -1,7 +1,7 @@
-package com.example.rabbitmq.receiver;
+package com.example.sub.receive;
 
-import camundajar.impl.com.google.gson.Gson;
-import com.example.rabbitmq.model.Contact;
+import com.example.sub.model.Contact;
+import com.google.gson.Gson;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;

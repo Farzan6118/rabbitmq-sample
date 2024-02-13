@@ -1,8 +1,7 @@
-package com.example.rabbitmq.publisher;
+package com.example.pub.send;
 
-import com.example.rabbitmq.model.Contact;
+import com.example.pub.model.Contact;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
@@ -21,8 +20,6 @@ public class TopicPublisher {
     };
     private final RabbitTemplate rabbitTemplate;
     AtomicInteger index = new AtomicInteger(0);
-    @Value("${spring.topic.exchange.name}")
-    private String topic;
 
     public TopicPublisher(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
@@ -31,7 +28,7 @@ public class TopicPublisher {
     @Profile("topics")
     public void sendMessageWithTopic(Contact message) {
         String key = keys[this.index.get()];
-        rabbitTemplate.convertAndSend(topic, key, message);
+        rabbitTemplate.convertAndSend("test.topic", key, message);
         System.out.println(" [x] Sent '" + message + "' with topic");
     }
 

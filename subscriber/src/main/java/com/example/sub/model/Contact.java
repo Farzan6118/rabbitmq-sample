@@ -1,4 +1,4 @@
-package com.example.rabbitmq.model;
+package com.example.sub.model;
 
 import java.io.Serializable;
 
@@ -6,24 +6,6 @@ public class Contact implements Serializable {
     private String firstName;
     private String lastName;
     private String phoneNumber;
-
-    public Contact() {
-    }
-
-    public Contact(String firstName, String lastName, String phoneNumber) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.phoneNumber = phoneNumber;
-    }
-
-    @Override
-    public String toString() {
-        return "Contact{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
-    }
 
     public String getFirstName() {
         return firstName;
@@ -48,4 +30,5 @@ public class Contact implements Serializable {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
 }

@@ -1,7 +1,7 @@
-package com.example.rabbitmq.api;
+package com.example.pub.api;
 
-import com.example.rabbitmq.model.Contact;
-import com.example.rabbitmq.publisher.QueuePublisher;
+import com.example.pub.model.Contact;
+import com.example.pub.send.QueuePublisher;
 import org.springframework.context.annotation.Profile;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
