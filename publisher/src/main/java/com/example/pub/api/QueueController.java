@@ -17,7 +17,7 @@ public class QueueController {
     }
 
     @RequestMapping(value = "/{queueName}", method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public void sendInQueue(@RequestBody Contact message, @PathVariable String queueName) {
         queuePublisher.sendMessageInQueue(message, queueName);
     }

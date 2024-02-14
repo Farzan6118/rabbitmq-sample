@@ -10,12 +10,10 @@ import org.springframework.stereotype.Component;
 public class PubSubPublisher {
     private final RabbitTemplate rabbitTemplate;
 
-
     public PubSubPublisher(RabbitTemplate rabbitTemplate) {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    @Profile("pub_sub")
     public void publishMessage(Contact message) {
         rabbitTemplate.convertAndSend("fanout", "", message);
         System.out.println(" [x] '" + message + "' published");

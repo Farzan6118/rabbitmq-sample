@@ -14,7 +14,6 @@ public class QueuePublisher {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    @Profile("queue")
     public void sendMessageInQueue(Contact message, String queueName) {
         rabbitTemplate.convertAndSend(queueName, message);
         System.out.println(" [x] Sent '" + message + "' in '" + queueName + "' queue");

@@ -25,7 +25,6 @@ public class TopicPublisher {
         this.rabbitTemplate = rabbitTemplate;
     }
 
-    @Profile("topics")
     public void sendMessageWithTopic(Contact message) {
         String key = keys[this.index.get()];
         rabbitTemplate.convertAndSend("test.topic", key, message);

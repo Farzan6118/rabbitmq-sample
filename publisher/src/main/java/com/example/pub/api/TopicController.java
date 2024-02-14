@@ -17,7 +17,7 @@ public class TopicController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public void SendInTopic(@RequestBody Contact message) {
         TopicPublisher.sendMessageWithTopic(message);
     }

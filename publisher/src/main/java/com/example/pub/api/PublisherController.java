@@ -17,7 +17,7 @@ public class PublisherController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public void PublishMessage(@RequestBody Contact message) {
         pubSubPublisher.publishMessage(message);
     }

@@ -28,14 +28,16 @@ public class RPCPublisher {
         this.exchange = exchange;
     }
 
-    @Profile("rpc")
-    public String sendAndReceiveWithRPC(Contact message) throws ExecutionException, InterruptedException, TimeoutException {
-        Gson gson = new Gson();
-        String json = gson.toJson(message);
-        RabbitConverterFuture<String> contact = asyncRabbitTemplate.convertSendAndReceive(
-                exchange.getName(), "rpc", json);
-        String response = contact.get(20, TimeUnit.SECONDS);
-        logger.info("response: " + response);
-        return response;
+    public String sendAndReceiveWithRPC(Contact message) {
+        try {
+            String jsonMessage = new Gson().toJson(message);
+            RabbitConverterFuture<String> contact = asyncRabbitTemplate.convertSendAndReceive(
+                    exchange.getName(), "rpc", jsonMessage);
+            String response = contact.get(30, TimeUnit.SECONDS);
+            logger.info("response: " + response);
+            return response;
+        } catch (InterruptedException | ExecutionException | TimeoutException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

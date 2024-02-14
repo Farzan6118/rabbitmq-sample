@@ -21,7 +21,7 @@ public class RPCController {
     }
 
     @RequestMapping(method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.OK)
     public String SendInRPC(@RequestBody Contact message) throws ExecutionException, InterruptedException, TimeoutException {
         return rpcPublisher.sendAndReceiveWithRPC(message);
     }
