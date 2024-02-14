@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "91b0c34d-71df-41e5-af72-c883ac75020a",
+		"name": "RabbitMQ sample",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1165624",
+		"_collection_link": "https://universal-meteor-759448.postman.co/workspace/Samimgroup~15659aab-1114-4bad-bec9-fa16da56abed/collection/1165624-91b0c34d-71df-41e5-af72-c883ac75020a?action=share&source=collection_link&creator=1165624"
+	},
+	"item": [
+		{
+			"name": "Publish Message",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"alex\",\r\n    \"lastName\": \"hamidi\",\r\n    \"phoneNumber\": \"88888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8056/api/v1/publish",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8056",
+					"path": [
+						"api",
+						"v1",
+						"publish"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Message with Topic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"alex\",\r\n    \"lastName\": \"hamidi\",\r\n    \"phoneNumber\": \"88888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8056/api/v1/topic",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8056",
+					"path": [
+						"api",
+						"v1",
+						"topic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send message with Queue",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"alex\",\r\n    \"lastName\": \"hamidi\",\r\n    \"phoneNumber\": \"11111\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8056/api/v1/queue/:queueName",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8056",
+					"path": [
+						"api",
+						"v1",
+						"queue",
+						":queueName"
+					],
+					"variable": [
+						{
+							"key": "queueName",
+							"value": "queue3",
+							"description": "queue1, queue2, queue3"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send/Receive msg with RPC",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"alex\",\r\n    \"lastName\": \"hamidi\",\r\n    \"phoneNumber\": \"311\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8056/api/v1/rpc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8056",
+					"path": [
+						"api",
+						"v1",
+						"rpc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send msg with Routing",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\": \"alex\",\r\n    \"lastName\": \"hamidi\",\r\n    \"phoneNumber\": \"88888\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8056/api/v1/routing",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8056",
+					"path": [
+						"api",
+						"v1",
+						"routing"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
