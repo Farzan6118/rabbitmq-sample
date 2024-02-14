@@ -23,21 +23,18 @@ public class QueueConfig {
 
     @Bean
     public Queue queue1() {
-        return new Queue("queue1", true, false, false, streamTypeQueue);
+        return new Queue("queue1", true, false, false, quorumTypeQueue);
     }
 
     @Bean
     public Queue queue2() {
-        return new Queue("queue2", true, false, false, quorumTypeQueue);
+        return new Queue("queue2", true, false, false, streamTypeQueue);
     }
 
     @Bean
     public Queue queue3() {
         return new Queue("queue3", true, false, false, streamTypeQueue);
     }
-
-    // generating Anonymous queues (auto delete queues)
-
 
     @Bean
     public TopicExchange topicExchange() {
