@@ -31,12 +31,4 @@ public class Contact implements Serializable {
         this.phoneNumber = phoneNumber;
     }
 
-    @Override
-    public String toString() {
-        return "Contact{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
-    }
 }

@@ -73,7 +73,7 @@ public class QueueConfig {
     @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory) {
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
-        rabbitTemplate.setMessageConverter(converter());
+//        rabbitTemplate.setMessageConverter(converter());
         return rabbitTemplate;
     }
 }

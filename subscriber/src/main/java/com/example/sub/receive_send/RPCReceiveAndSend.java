@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class RPCReceiveAndSend {
 
     Logger logger = LoggerFactory.getLogger(RPCReceiveAndSend.class);
+
     @RabbitListener(queues = "tut.rpc.requests")
     public String receiveMessage(String message) {
         Gson gson = new Gson();

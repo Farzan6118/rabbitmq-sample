@@ -1,6 +1,7 @@
 package com.example.pub.send;
 
 import com.example.pub.model.Contact;
+import com.google.gson.Gson;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,8 @@ public class QueuePublisher {
     }
 
     public void sendMessageInQueue(Contact message, String queueName) {
-        rabbitTemplate.convertAndSend(queueName, message);
+        String convertedObject = new Gson().toJson(message);
+        rabbitTemplate.convertAndSend(queueName, convertedObject);
         System.out.println(" [x] Sent '" + message + "' in '" + queueName + "' queue");
     }
 }
